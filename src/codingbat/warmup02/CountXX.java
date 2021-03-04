@@ -1,16 +1,16 @@
 package codingbat.warmup02;
 
-public class CountXX {
+public final class CountXX {
 
 	int countXX(String str) {
 		  
-		  int countX = 0;
+		   int countX = 0;
 		  
 		  for(int i=0; i<str.length()-1; i++){
 		    
 		    if(str.charAt(i)=='x'){
-		      if(str.charAt(i+1)=='x'){
-		        countX++;
+		      if(str.charAt(i+1)=='x'){		    	  
+		    	  countX++;
 		      }
 		    }
 		    
