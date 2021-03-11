@@ -1,18 +1,25 @@
 package codingbat.warmup02;
 
+enum MONTH {January, February, March };
+
 public class EnumEx {
 
-	enum MONTH {January, February, March };
+	
 	enum TIMEZONE { 
-		GMT600USIndianaStarke("(GMT-10:00) America/Adak"), 
-		GMT500AmericaAtikokan("(GMT-10:00) America/Atka");
+		USINDIANA("(GMT-10:00) America/Adak",-10.0), 
+		AmericaAtikokan("(GMT-10:00) America/Atka", -10.0);
 		
 		private final String timeZoneId;
 
-	    private TIMEZONE(String timeZoneId) {
+	    private TIMEZONE(String timeZoneId, double i) {
 	        this.timeZoneId = timeZoneId;
 	    }
 	
+	    public String formatTime(){
+	    	
+	    	return "";
+	    } 
+	    
 	}
 	
 	
@@ -54,7 +61,7 @@ public class EnumEx {
 		}
 		
 		for(Level level : Level.values()){
-			System.out.println(level.levelCode);
+			System.out.println(level.levelCode+" "+level.getLevelCode());
 		}
 		/*
 		switch(MONTH.January) {
