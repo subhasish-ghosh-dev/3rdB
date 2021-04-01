@@ -13,9 +13,7 @@ public class ZipZap {
 				        String cstr = str.substring(i,i+3);
 				        if(cstr.charAt(0)=='z' && cstr.charAt(2)=='p'){
 				          strb.append("zp");
-				          i = i+2;
-				          //str = strb.toString().concat(str.substring(i+3));
-				          //System.out.println(i+str);
+				          i = i+2;				          
 				          if(i==str.length()-2){
 				            break;
 				          }
