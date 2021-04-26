@@ -33,11 +33,11 @@ public class UIAdmission {
 		}
 		System.out.println("Enter marks for three courses");
 		count=0;
-		while(count<=2 && sc.hasNext()){		
-			
-			if(count<=2){
-				System.out.println("Mark for Course CODE:"+course[count]);			
-				marks[count++]=sc.nextDouble();				
+		System.out.println("Mark for Course CODE:"+course[count]);	
+		while(count<=2 && sc.hasNext()){			
+			if(count<=2){							
+				marks[count++]=sc.nextDouble();
+				if(count<=2)System.out.println("Mark for Course CODE:"+course[count]);
 			}
 			else{
 				break;
