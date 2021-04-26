@@ -29,6 +29,11 @@ public class Student {
 	int hscMarks;
 	int levelOfUniversity;
 	
+	String rollNo;
+	String[] course;
+	double[] marks;
+	double result=0;
+	
 	Student(int ad, int ss, int hs, types t){
 		this.admissionMarks = ad;
 		this.sscMarks = ss;
@@ -39,6 +44,31 @@ public class Student {
 	Student(int lvl, types t){
 		this.levelOfUniversity = lvl;
 		types.ADMISSION.type = t.type;
+	}
+	
+	Student(String rollNo,String[] course, double[] marks){
+		this.rollNo = rollNo;
+		this.course = course;
+		this.marks = marks;
+	}
+	
+	public void calc(){
+		for(double m:marks){
+			result += m;
+		}		
+		result /=course.length;		
+	}
+	
+	public void display(){
+		int idx = 0;
+
+		System.out.println("Course Code"+"    "+"Mark");
+		System.out.println("----------"+"   "+"-----");
+		for(String c : course){
+			System.out.println(c+"   "+marks[idx++]);			
+		}
+		System.out.println("----------------------------");
+		System.out.println("Average:   "+result);
 	}
 	
 	
