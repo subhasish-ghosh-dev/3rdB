@@ -1,14 +1,25 @@
 package com.santosoftvw.oop;
 
 public class Student {
+	static int ROLL;
 	
 	enum types {		 
-		ADMISSION("");
+		ADMISSION(0),
+		FEE(""),
+		SCHOLARSHIP();
 	
 		String type;
 		
+		private types(){
+			
+		}
+		
 		private types(String t){
 			this.type = t;
+		}
+		
+		private types(int i){
+			
 		}
 	
 	}
@@ -39,7 +50,7 @@ public class Student {
 				break;
 			case "credit transfer":
 				IExternalAdmission iead = new Admission();
-				System.out.println(iead.calculateEligibilty(this));
+				System.out.println("For Credit Transfer: "+iead.calculateEligibilty(this));
 				break;
 			default:
 				System.out.println("NOT APPLICABLE");
