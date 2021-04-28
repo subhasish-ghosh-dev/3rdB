@@ -43,7 +43,7 @@ public class UIAdmission {
 				break;
 			}
 		}	
-		
+		sc.close();
 		Student stu = new Student("2034052",course, marks);
 		stu.calc();
 		stu.display();

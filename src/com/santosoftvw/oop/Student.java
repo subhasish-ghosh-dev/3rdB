@@ -61,7 +61,7 @@ public class Student {
 	
 	public void display(){
 		int idx = 0;
-
+		
 		System.out.println("Course Code"+"    "+"Mark");
 		System.out.println("----------"+"   "+"-----");
 		for(String c : course){
