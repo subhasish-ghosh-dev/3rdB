@@ -5,9 +5,9 @@ public class WorkOut {
 	private float stepNo;
 	private float speed;
 	private float calorieBurned;
+	 
 	
-	
-	private WorkOut(float s, float sp){
+	public WorkOut(float s, float sp){
 		this.speed = sp;
 		this.stepNo = s;
 	}
@@ -16,8 +16,7 @@ public class WorkOut {
 		this.calorieBurned = (stepNo*speed)/IWorkoutResult.RATEOFCALORIESBURNBYSTEP;
 	}
 	
-	private void countWeight(){
-		
+	private void countWeight(){	
 		
 		class Weight{
 			
@@ -29,7 +28,7 @@ public class WorkOut {
 		void displayFitness(Person p);
 	}
 	
-	static class Person{
+	class Person{
 		String name;
 		String age;
 		double weight;
@@ -45,7 +44,12 @@ public class WorkOut {
 		void weightReduced(){
 			wt.calculateCalorieBurned();
 			weight = weight - wt.calorieBurned * 0.15;
-			wt.obj.displayFitness(this);
+			obj.displayFitness(this);
+			//wt.display(this);
+		}
+		
+		public String toString(){
+			return String.valueOf(this.weight);
 		}
 	}
 	
@@ -53,13 +57,17 @@ public class WorkOut {
 		System.out.println(p.weight);
 	}*/
 	
-	
+	/*
 	IWorkoutResult obj = new IWorkoutResult(){
 		public void displayFitness(Person p){
 			System.out.println(p.weight);
 		}
 	};
-	
-	
+	*/
+	//Functional Interface 
+	//IWorkoutResult obj = p -> {
+	//	System.out.println(p.weight);
+	//};
+	IWorkoutResult obj =  Gym::calculateDuration; 
 
 }
